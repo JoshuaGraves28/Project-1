@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Register Link</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="scripts/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="scripts/Project1.js"></script>
+        
+    </head>
+    <body>
+        <a href="index.html">Session Registration</a>
+        <br></br>
+        <form name="registration" id="registration" action="#">
+            <fieldset>
+                <p>
+                    <label for="input">First Name:</label>
+                    <input type="text" name="firstname" class="namefields" id="firstname">
+                </p>
+                      
+                <p>
+                    <label for="input">Last Name:</label>
+                    <input type="text" name="lastname" class="namefields" id="lastname">
+                </p>
+                
+                <p>
+                    <label for="input">How your name will be displayed:</label>
+                    <input type="text" name="displayname" id="displayname">
+                </p>
+                
+                <p>
+                    
+                    <label for="input">Select Session:</label>
+                    
+                    <select name="session" id="session">
+                    
+                        <option value="1">Session 1</option>
+                        <option value="2">Session 2</option>
+                        <option value="3">Session 3</option>
+                        <option value="4">Session 4</option>
+                    
+                    </select>
+                    
+                </p>
+                
+                <input type="button" value="Submit" onclick="Project1.submitRegistrationForm();">
+                
+            </fieldset>
+        </form>
+        <script type="text/javascript">
+            $(document).ready( Project1.init );
+            $('.namefields').change(function(){
+               
+                var fname = document.getElementById(firstname);
+                var lname = document.getElementById(lastname);
+                var displayname = fname + "" + lname;
+                $('#displayname').html(displayname);
+            });
+            </script>
+        <div id="resultsarea">
+            
+            <p id="version"></p>
+        </div>
+    </body>
+</html>
